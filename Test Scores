@@ -1,0 +1,19 @@
+function displayResults(scores) {
+
+    // Get the lowest and highest scores
+    const lowScore = Math.min(...scores);
+    const highScore = Math.max(...scores);
+
+    // Calculate the average
+    const averageScore =
+        scores.reduce((total, score) => total + score, 0) / scores.length;
+
+    // Display results
+    document.getElementById("results").innerHTML = `
+        <h2>Score Results</h2>
+        <p>Scores: ${scores.join(", ")}</p>
+        <p>Low score: ${lowScore}</p>
+        <p>High score: ${highScore}</p>
+        <p>Average score: ${averageScore.toFixed(1)}</p>
+    `;
+}
